@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #yes {
+      background-color: rgb(225, 0, 0);
+      border-radius: none;
+      border-radius: 10px;
+      font-size: 15px;
+      padding: 8px 35px;
+      cursor: pointer;
+      transition: top 0.5, left 0.5;
+      color: white;
+    }
+    #target {
+      position: absolute;
+      left: 200px;
+      background-color: rgba(0, 89, 225);
+      border: none;
+      border-radius: 10px;
+      font-size: 25px;
+      padding: 8px 35px;
+      cursor: pointer;
+      transition: top 0.5, left 0.5;
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <h1>do you love me</h1>
+      <button id="target">no</button>
+      <button id="yes">yes</button>
+    </div>
+
+    <script>
+      const target = document.getElementById("target");
+
+      const yes = document.getElementById("yes");
+      yes.addEventListener("click", () => {
+        alert("Yes!");
+      });
+      
+      target.addEventListener("mousemove", function () {
+        remove();
+      });
+
+      function remove() {
+        const maxwidth = 400;
+        const maxHieght = 400;
+        const randomX = Math.floor(Math.random() * maxHieght);
+        const randomY = Math.floor(Math.random() * maxwidth);
+        target.style.left = randomX + "px";
+        target.style.top = randomY + "px";
+      }
+
+     
+    </script>
+  </body>
+</html>
